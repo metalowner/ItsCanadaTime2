@@ -1,0 +1,236 @@
+html,body,address,blockquote,div,
+form,fieldset,caption,
+h1,h2,h3,h4,h5,h6,
+hr,ul,li,ol,ul,dl,dt,dd,
+table,tr,td,th,p,img,iframe {
+	/*
+		Some HTML elements have predefined margins, paddings and borders so we want 
+		to default them all to 0 in order to have mroe control over the way we display our page.
+	*/
+	margin:0;
+	padding:0;
+}
+
+img, fieldset {
+	border:none;
+}
+
+hr {
+	/*
+		display:none means the element wont be displayed. 
+		We want to use those in order to seperate content and don't want to display them to the user.
+	*/
+	display:none;
+}
+
+@media (max-width:480px) {
+	/*
+		This is a fix for smaller screens to prevent automatic adjustments of our content.
+	*/
+	* {
+		-webkit-text-size-adjust:none;
+		-ms-text-size-adjust:none;
+	}
+}
+
+html, body {
+	/* 
+		This section adjusts our page height to the full screen height of the user.
+		It is used in order to adjust our content to the page height.
+	*/
+	height:100%;
+}
+
+body, button, input, select, table, textarea {
+	/*
+		This section defines the font we want to use to present our content.
+	*/
+	font:normal 100%/150% 'Roboto',sans-serif;
+}
+
+body {
+	/*
+		Define the page body as 100% minimum height.
+	*/
+	display:grid;
+	grid-template-rows:auto 1fr;
+}
+
+h1 {
+	/*
+		Define how the main page header will be displayed.
+		You can change the colors of the background (#fff) and the text (#000) by changing the letters / numbers.
+	*/
+	padding-bottom:1em;
+	text-align:center;
+	font:normal 300%/120% 'Roboto',sans-serif;
+	background:#fff;
+	color:#000;
+}
+
+h1:before {
+	/*
+		Design the header with the Canadian flag.
+	*/
+	content:"";
+	display:block;
+	height:1.75em;
+	margin-bottom:1em;
+	background:#da2724 url(images/canadaflag.png) bottom center no-repeat;
+	background-size:3em 1.5em;
+}
+
+.widthWrapper {
+	/*
+		Set maximum width of the page.
+		That way the content will respond to the screen size.
+	*/
+	max-width:44em;
+	margin:0 auto;
+}
+
+.mainImage {
+	/*
+		Difines how to display the largest image at the top of the page.
+	*/
+	max-width: 100%;
+	border: 1px solid gray;
+}
+
+.subsection {
+	/*
+		Define how the central content box will be displayed.
+		You can play with the background:rgba numbers in order to change its' color.
+	*/
+	display: flex;
+	font:normal 125%/175% 'Roboto',sans-serif;
+}
+
+.subsection p {
+	padding-bottom:1em;
+}
+
+#whatWeDo {
+	/*
+		Define the responsiveness and size of the list.
+	*/
+	padding-top: 1em;
+	padding-bottom: 1em;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.listItem {
+	/*
+		Define how the list element wil look like.
+	*/
+	list-style-type: none;
+	color: #444;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	text-align: center;
+	max-width: 100%;
+}
+
+.listImage {
+	max-width: 100%;
+}
+
+#webLink {
+	/*
+		Define how the link element looks like.
+	*/
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.5em;
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding: 1em;
+	color: #f6f6f6;
+	background: rgba(0,150,200,0.9);
+	border-radius: 1em;
+	text-decoration: none;
+	max-width: 50%;
+	box-shadow:
+		0 1px 2px 2px rgba(0,0,0,0.5),
+		0 0.5em 0.5em rgba(0,0,0,0.5);
+	transition:background 1s, box-shadow 1s;
+}
+
+#webLink:active,
+#webLink:focus,
+#webLink:hover {
+	/*
+		Define how the link interacts.
+	*/
+	background:rgba(0,100,200,0.9);
+	box-shadow:
+		0 1px 1px 1px rgba(0,0,0,0.25),
+		0 0.25em 0.25em rgba(0,0,0,0.5);
+}
+
+#footer {
+	/*
+		Center the footer text.
+	*/
+	text-align:center;
+	padding-top: 1em;
+}
+
+#footer img {
+	/*
+		Define footer images size and padding.
+	*/
+	width:auto;
+	height:3em;
+	padding:0 1em 1em;
+}
+
+#footer strong {
+	font-weight:normal;
+	text-transform:uppercase;
+}
+
+#footer p {
+	padding-bottom:0.5em;
+	letter-spacing:0.05em;
+}
+
+@media (max-width:48em) {
+	/*
+		Responsiveness media query adjusting the page to small screen sizes.
+	*/
+	h1 {
+		padding-bottom:0.33em;
+	}
+	h1:before {
+		height:1.75em;
+		margin-bottom:0.33em;
+	}
+	iframe {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.widthWrapper {
+		padding:1em 1em 0.5em;
+	}
+	#whatWeDo {
+		min-height:0;
+		padding-right:0;
+		width: 100%;
+	}
+	.subsection {
+		display: block;
+	}
+	.listItem {
+		text-align: center;
+		padding-right: 0px;
+	}
+	#webLink {
+		font-size: 1.1em;
+	}
+}
